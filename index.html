@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NORTEC WEBSITE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .logo img {
+            max-width: 120px;
+        }
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 8px 15px;
+        }
+        .navbar a:hover {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 450px;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: fadeEffect 2s;
+        }
+        @keyframes fadeEffect {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        /* Content Section */
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+        .content h3 {
+            color: #007bff;
+            margin-bottom: 15px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .content p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.1em;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+        }
+
+        /* Product Links */
+        .product-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+        }
+        .product-list a {
+            text-decoration: none;
+            background: #007bff;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .product-list a:hover {
+            background: #0056b3;
+        }
+
+        /* Footer */
+        .footer-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px;
+            background-color: #f1f1f1;
+        }
+        .footer-banner img {
+            max-width: 180px;
+            height: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+        }
+        footer .social-icons {
+            margin-top: 10px;
+        }
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        footer .social-icons a:hover {
+            color: #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .slideshow-container {
+                height: 300px;
+            }
+            .content {
+                padding: 30px;
+            }
+        }
+        @media (max-width: 480px) {
+            .slideshow-container {
+                height: 250px;
+            }
+            .content p {
+                font-size: 1em;
+            }
+            .footer-banner img {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#"><img src="./images/one.jpg" alt="NORTEC logo"></a>
+        </div>
+        <nav class="navbar">
+            <a href="about.aspx" class="active">About us</a>
+            <a href="#">Solutions</a>
+            <a href="#">Support</a>
+            <a href="#">Services</a>
+            <a href="#">Knowledge Base</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Pricing</a>
+        </nav>
+    </header>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <img class="mySlides show" src="./images/img1.jpg" alt="Slide 1">
+        <img class="mySlides" src="./images/img2.jpg" alt="Slide 2">
+        <img class="mySlides" src="./images/img3.jpg" alt="Slide 3">
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll(".mySlides");
+            if (slides.length === 0) return;
+            slides.forEach(slide => slide.style.display = "none");
+            slideIndex = (slideIndex + 1) % slides.length;
+            slides[slideIndex].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+        showSlides();
+    </script>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h3>Electronic Health Records Software</h3>
+        <p>Nortec EHR provides healthcare organizations with integrated solutions for EMR, practice management, and electronic claims. From EMR to practice management to electronic claims, Nortec EHR empowers healthcare organizations to effectively address financial, administrative, clinical, and regulatory needs. Nortec also offers a comprehensive set of support services such
+        as medical billing and transcription services as part of an integrated solution under one roof. This allows physicians to do what they do the best, care for patients.</p>
+    </div>
+
+    <!-- Product Links -->
+    <div class="product-list">
+        <a href="http://www.nortecehr.com/ehr.aspx">Electronic Health Record</a>
+        <a href="http://www.nortecehr.com/emr.aspx">Electronic Medical Record</a>
+        <a href="http://www.nortecehr.com/wpportal.aspx">Patient Portal</a>
+    </div>
+
+    <!-- Footer Banners -->
+    <div class="footer-banner">
+        <img src="./images/EHR2024.png" alt="EHR 2024 Certification">
+        <img src= "images/surescripts_solutionprovider.jpg" alt="Surescript Solution Provider">
+        <img src="./images/moneyback.png" alt="Money Back Guarantee">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 NORTEC EHR | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
